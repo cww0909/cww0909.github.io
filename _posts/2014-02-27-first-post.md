@@ -16,13 +16,16 @@ Jekyll is really nice if all you want to do is host static websites, it's really
 - Git (both host and virtual OS)
 
 ### What I Was Missing
-It's nice to make changes and preview your site locally before pushing it for publishing, like `jekyll serve` and I can just preview the blog on my browser. To do this I needed: 
+It's nice to make changes and preview your site locally before pushing it for publishing, like `jekyll serve` and I can just preview the blog on my browser. To do this I needed:
+
 - Ruby
 - RubyGems
+
 Since Ruby is a pain to set up on Windows, I went with the easier route of setting up the initial draft of my blog in my virtual Ubuntu instead of spending time trying to force Ruby to run properly on Windows. If you're using Linux I don't recommend installing Ruby as a root user though, because you can potentially encounter problems when you want different version of Ruby for example. To solve this I used <a href="http://rvm.io">RVM</a> to keep my development environments properly separated and it is also good practice to do so. Another alternative to RVM is <a href="github.com/sstephenson/rbenv">rbenv</a>.
 
 ### Documentation Read
 For the most part, these documentations are enough to get you through the essential steps you need to get the blog running:
+
 - <a href="http://rvm.io/rvm/install">RVM install guide</a>
 - <a href="http://pages.github.com">GitHub Pages</a>
 - <a href="http://jekyllrb.com/docs/home/">Jekyll documentation</a>
