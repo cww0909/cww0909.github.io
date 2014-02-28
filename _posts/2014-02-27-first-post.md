@@ -39,3 +39,4 @@ Also when previewing the blog locally, remember that links to anything in your b
  
 ### To-Do
 - `_drafts` folder for longer posts that need a few sessions to complete
+- start posting links using the `[[text]](http://link-to-said-text.com/)` format instead of using HTML
