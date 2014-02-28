@@ -19,7 +19,7 @@ Jekyll is really nice if all you want to do is host static websites, it's really
 It's nice to make changes and preview your site locally before pushing it for publishing, like `jekyll serve` and I can just preview the blog on my browser. To do this I needed: 
 -Ruby
 -RubyGems
-I don't recommend installing Ruby as a root user though, because you can potentially encounter problems when you want different version of Ruby for example. To solve this I used <a href="http://rvm.io">RVM</a> to keep my development environments properly separated and it is also good practice to do so. Another alternative to RVM is <a href="github.com/sstephenson/rbenv">rbenv</a>.
+Since Ruby is a pain to set up on Windows, I went with the easier route of setting up the initial draft of my blog in my virtual Ubuntu instead of spending time trying to force Ruby to run properly on Windows. If you're using Linux I don't recommend installing Ruby as a root user though, because you can potentially encounter problems when you want different version of Ruby for example. To solve this I used <a href="http://rvm.io">RVM</a> to keep my development environments properly separated and it is also good practice to do so. Another alternative to RVM is <a href="github.com/sstephenson/rbenv">rbenv</a>.
 
 ### Documentation Read
 For the most part, these documentations are enough to get you through the essential steps you need to get the blog running:
@@ -40,3 +40,6 @@ Also when previewing the blog locally, remember that links to anything in your b
 ### To-Do
 - `_drafts` folder for longer posts that need a few sessions to complete
 - start posting links using the `[[text]](http://link-to-said-text.com/)` format instead of using HTML
+
+### Additional Notes
+I decided to set up Jekyll on Linux to preview any significant changes I'll make to my blog, and resort to just writing future posts in Windows and push it to the repo to publish. But if you still insist on using Windows then [[here]](https://github.com/juthilo/run-jekyll-on-windows/) is a good resource to look at to get Jekyll running on Windows.
