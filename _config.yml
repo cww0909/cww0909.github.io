@@ -4,6 +4,7 @@ paginate: 10 # pagination based on number of posts
 paginate_path: "page:num"
 exclude: ["README.md"] # files to exclude
 pygments: true
+markdown: redcarpet
 
 title: Bits and Pieces on Programming 
 description: Programming Blog 
@@ -21,7 +22,6 @@ rss_path: feed
 categories_path: categories
 about_path: about 
 tags_path: tags
-profile_pic_path: assets/media/blog_profile.jpg
 
 BASE_PATH: http://cww0909.github.io
 
