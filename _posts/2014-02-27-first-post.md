@@ -35,7 +35,7 @@ For my blog, I used the <a href="http://github.com/dbtek/dbyll">dbyll</a> theme 
 ### Things To Keep In Mind
 One of the first things I tried changing in the theme was the profile picture of the blog. The default picture was something off <a href="http://www.gravatar.com/">Gravatar</a>, which you can change easily by signing up, uploading a picture and linking your profile in the `email_md5` field in `_config.yml`. The downside (or upside) of this is now your GitHub profile is set to this picture, and who knows what other sites you registered under that email have a different profile picture now. However, if you'd rather the picture come from your repository, be prepared to do some image resizing, cropping, and CSS to fit the theme.
 
-Also when previewing the blog locally, remember that links to anything in your blog is referenced relative to `{{ site.BASE_PATH }}` and not the the local copy, so don't be surprised if you get 404 for some new pages. What you can do is change all references `{{ site.BASE_PATH }}` to `/` and solve this problem (not tested).
+Also when previewing the blog locally, remember that links to anything in your blog is referenced relative to `site.BASE_PATH` and not the the local copy, so don't be surprised if you get 404 for some new pages. What you can do is change all references `site.BASE_PATH` to `/` and solve this problem (not tested).
  
 ### To-Do
 - `_drafts` folder for longer posts that need a few sessions to complete
