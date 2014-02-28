@@ -39,7 +39,7 @@ Also when previewing the blog locally, remember that links to anything in your b
  
 ### To-Do
 - `_drafts` folder for longer posts that need a few sessions to complete
-- start posting links using the `[[text]](http://link-to-said-text.com/)` format instead of using HTML
+- start posting links using the `[text](http://link-to-said-text.com/)` format instead of using HTML
 
 ### Additional Notes
-I decided to set up Jekyll on Linux to preview any significant changes I'll make to my blog, and resort to just writing future posts in Windows and push it to the repo to publish. But if you still insist on using Windows then [[here]](https://github.com/juthilo/run-jekyll-on-windows/) is a good resource to look at to get Jekyll running on Windows.
+I decided to set up Jekyll on Linux to preview any significant changes I'll make to my blog, and resort to just writing future posts in Windows and push it to the repo to publish. But if you still insist on using Windows then [here](https://github.com/juthilo/run-jekyll-on-windows/) is a good resource to look at to get Jekyll running on Windows.
