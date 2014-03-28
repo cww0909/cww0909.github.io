@@ -10,6 +10,7 @@ So for one reason or another you are looking to encode your Python classes into 
 
 ### Encoding Classes That Contain Common Data Types
 So for example, the class you want to encode looks like this:
+
 ```python3
 class MyClass:
 	def __init__(self, x ,y ,z):
@@ -17,7 +18,9 @@ class MyClass:
 		self.x = x
 		self.arr = [y,z]
 ```
+
 and you want to encode it this way:
+
 ```json
 {
 	"desc": "str"
@@ -25,19 +28,23 @@ and you want to encode it this way:
 	"arr": ["y", "z"]
 }
 ```
+
 Doing this is actually pretty simple, all you need to do is:
+
 ```python3
 import json
 
 myInstance = MyClass(x,y,z)
 json.dumps(myInstance.__dict__)
 ```
+
 and the [json.dumps()](http://docs.python.org/3.3/library/json.html#json.dumps) will return a JSON formatted string of the class instance.
 
 ### Encoding Classes Containing 3rd Party Data Types
 But what if you have a class that contains a 3rd party data type, such as a NumPy array? Or even less common data types such as [date](http://docs.python.org/3.3/library/datetime.html#date-objects)? What you can do is define another class that extends the (JSONEncoder)[http://docs.python.org/3.3/library/json.html#json.JSONEncoder] class and overwrite the (default())[http://docs.python.org/3.3/library/json.html#json.JSONEncoder.default] method to encode the data types that you want. Let us just dive into an example to see how this is done.
 
 Now let's say we have a class like this:
+
 ```python3
 class MyClass:
 	def __init__(self, id, date, someList):
@@ -45,7 +52,9 @@ class MyClass:
 		self.date = date # date object
 		self.data = array(someList) # NumPy array
 ```
+
 If we call `json.dumps(myInstance.__dict__)` we would get a TypeError saying date is not serializable. So we need to define a custom JSON encoder, which would look like:
+
 ```python3
 class CustomEncoder(JSONEncoder):
 	def default(self, obj):
@@ -57,7 +66,9 @@ class CustomEncoder(JSONEncoder):
 			return obj.__dict__ # might as well define the encoding for our class
 		return json.JSONEncoder.default(self, obj) # use the base class default() method otherwise
 ```
+
 Note that in the custom encoder above, we can either convert the less common data types to a more common Python data type (such as int or str) that works with the base JSONEncoder class or define how the data should be represented in the format that we want. Then, we can just call `json.dumps(myInstance, cls=CustomEncoder)` and get:
+
 ```json
 {
 	"id": "1",
