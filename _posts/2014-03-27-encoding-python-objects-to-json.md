@@ -10,7 +10,7 @@ So for one reason or another you are looking to encode your Python classes into 
 
 ### Encoding Classes That Contain Common Data Types
 So for example, the class you want to encode looks like this:
-```python
+```python3
 class MyClass:
 	def __init__(self, x ,y ,z):
 		self.desc = "str"
@@ -26,7 +26,7 @@ and you want to encode it this way:
 }
 ```
 Doing this is actually pretty simple, all you need to do is:
-```python
+```python3
 import json
 
 myInstance = MyClass(x,y,z)
@@ -38,7 +38,7 @@ and the [json.dumps()](http://docs.python.org/3.3/library/json.html#json.dumps) 
 But what if you have a class that contains a 3rd party data type, such as a NumPy array? Or even less common data types such as [date](http://docs.python.org/3.3/library/datetime.html#date-objects)? What you can do is define another class that extends the (JSONEncoder)[http://docs.python.org/3.3/library/json.html#json.JSONEncoder] class and overwrite the (default())[http://docs.python.org/3.3/library/json.html#json.JSONEncoder.default] method to encode the data types that you want. Let us just dive into an example to see how this is done.
 
 Now let's say we have a class like this:
-```python
+```python3
 class MyClass:
 	def __init__(self, id, date, someList):
 		self.id = id # int or str
@@ -46,7 +46,7 @@ class MyClass:
 		self.data = array(someList) # NumPy array
 ```
 If we call `json.dumps(myInstance.__dict__)` we would get a TypeError saying date is not serializable. So we need to define a custom JSON encoder, which would look like:
-```python
+```python3
 class CustomEncoder(JSONEncoder):
 	def default(self, obj):
 		if isinstance(obj, date):
