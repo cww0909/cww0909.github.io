@@ -23,8 +23,8 @@ and you want to encode it this way:
 
 ```json
 {
-	"desc": "str"
-	"x": "x"
+	"desc": "str",
+	"x": "x",
 	"arr": ["y", "z"]
 }
 ```
